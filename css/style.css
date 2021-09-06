@@ -218,6 +218,7 @@ body {
 .footer-adress .link:hover {
   color: var(--acent-color);
 }
+
 .title-footer-sn {
   margin-top: 0;
   margin-bottom: 20px;
@@ -232,14 +233,18 @@ body {
 .conteiner-footer {
   background-color: rgba(255, 255, 255, 0.1);
 }
+
+.footer-social-networks {
+  margin-right: 93px;
+}
+
 .social-networks-icon.footer-icon {
   fill: var(--primary-white-color);
 }
 
-/* .footer-form {
+.footer-form {
   display: flex;
   flex-direction: column;
-  margin-left: 93px;
 }
 
 .footer-label {
@@ -252,23 +257,70 @@ body {
   text-transform: uppercase;
 }
 
-.input-footer {
+.input-footer-form {
+  margin-right: 12px;
+
   width: 358px;
   height: 50px;
   padding: 15px;
   border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 4px;
   background-color: inherit;
+
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.input-footer-form:focus-within {
+  outline: transparent;
+  border-color: #2196f3;
+}
+
+/* .input-footer-form[placeholder] {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.25;
+  color: rgba(255, 255, 255, 0.6);
 } */
 
-/* index.html */
-/* hero */
+.footer-form-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 200px;
+  height: 50px;
+  margin-top: 35px;
+
+  background: #2196f3;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.87;
+  letter-spacing: 0.06em;
+
+  color: var(--primary-white-color);
+
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.footer-form-btn > svg {
+  margin-left: 10px;
+}
+
+.footer-form-btn:hover,
+.footer-form-btn:focus {
+  background-color: transparent;
+}
+
+/* ***************************************index.html******************************************** */
+/* ---------------------hero----------------------------------- */
 .hero {
   margin-left: auto;
   margin-right: auto;
   max-width: 1600px;
   min-height: 600px;
-  /* background-image: url(../img/hero.jpg); */
   background-image: linear-gradient(
       to bottom,
       rgba(47, 48, 58, 0.4),
@@ -327,7 +379,7 @@ body {
   background-color: var(--primary-white-color);
 }
 
-/* modal window */
+/* ---------------------modal window------------------------------------- */
 .backdrop {
   position: fixed;
   top: 0;
@@ -433,9 +485,12 @@ body {
   height: 40px;
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
+
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .input-field:focus-within {
+  outline: 0ch;
   border-color: #2196f3;
 }
 
@@ -488,6 +543,8 @@ body {
   box-sizing: border-box;
   border-radius: 4px;
   resize: none;
+
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .textarea [placeholder] {
@@ -500,8 +557,10 @@ body {
 }
 
 .textarea:focus-within {
+  outline: 0ch;
   border-color: #2196f3;
 }
+
 .field-btn {
   margin-left: auto;
   margin-right: auto;
@@ -524,6 +583,7 @@ body {
 .field-btn:focus {
   background-color: #188ce8;
 }
+
 .checkbox {
   display: flex;
   justify-content: center;
@@ -539,14 +599,19 @@ body {
   letter-spacing: 0.03em;
   color: #757575;
 }
+
 .icon-checkbox {
   display: inline-block;
-  width: 15px;
+  width: 16px;
   height: 15px;
-  margin-right: 5px;
+  margin-right: 7px;
 
   border: 2px solid #2a2a2a;
   border-radius: 4px;
+
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-image 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .checkbox-input {
@@ -555,10 +620,6 @@ body {
 
 .checkbox-input:checked + .icon-checkbox {
   background-color: #2196f3;
-  background-image: url(../img/checked.svg);
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
   border-color: transparent;
 }
 
@@ -628,7 +689,7 @@ body {
   color: var(--header-text-color);
   font-weight: 700;
   font-size: 36px;
-  line-height: 1.17;
+  /* line-height: 1.17; */
   text-align: center;
   letter-spacing: 0.03em;
 }
