@@ -167,7 +167,6 @@ body {
 
 /* footer */
 .footer {
-  /* display: flex; */
   padding-top: 60px;
   padding-bottom: 60px;
   background-color: #2f303a;
@@ -244,10 +243,11 @@ body {
 
 .footer-form {
   display: flex;
-  flex-direction: column;
 }
 
-.footer-label {
+.footer-form-title {
+  display: block;
+
   margin-bottom: 20px;
   font-weight: 700;
   font-size: 14px;
@@ -284,7 +284,6 @@ body {
 
   width: 200px;
   height: 50px;
-  margin-top: 35px;
 
   background: #2196f3;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
@@ -406,7 +405,7 @@ body {
   min-height: 581px;
   padding-top: 40px;
   padding-bottom: 40px;
-  padding-left: 41px;
+  padding-left: 40px;
 
   background-color: var(--primary-white-color);
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
@@ -448,20 +447,23 @@ body {
 }
 
 .modal-title {
-  font-family: Roboto;
+  display: block;
+
   font-weight: 700;
   font-size: 20px;
   line-height: 1.15;
   letter-spacing: 0.03em;
   color: #212121;
+
+  margin-bottom: 12px;
 }
-.modal-field {
+.modal-form {
   display: flex;
   flex-direction: column;
   width: 448px;
 }
 
-.label {
+.modal-form__label {
   display: block;
   margin-bottom: 4px;
 
@@ -472,7 +474,7 @@ body {
   color: #757575;
 }
 
-.input-field {
+.modal-form__input {
   width: 100%;
   margin-bottom: 10px;
 
@@ -485,48 +487,25 @@ body {
   transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.input-field:focus-within {
+.modal-form__input:focus-within {
   outline: 0ch;
   border-color: #2196f3;
 }
-
-.username {
-  position: relative;
-}
-.icon-username {
-  position: absolute;
-  top: -2px;
-  left: 12px;
-  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.phone-number {
+.input-wrap {
   position: relative;
 }
 
-.icon-phone-number {
+.modal-form__icon {
   position: absolute;
-  top: -2px;
+  top: 50%;
   left: 12px;
+
+  transform: translateY(-50%);
 
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.email {
-  position: relative;
-}
-
-.icon-email {
-  position: absolute;
-  top: -2px;
-  left: 12px;
-
-  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.input-field:focus-within + .icon-username,
-.input-field:focus-within + .icon-phone-number,
-.input-field:focus-within + .icon-email {
+.modal-form__input:focus-within + .modal-form__icon {
   fill: #2196f3;
 }
 
